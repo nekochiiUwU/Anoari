@@ -22,8 +22,7 @@ func movement_process(delta: float):
 	vertival_movement(delta)
 	wall_movement()
 	a()
-	print(int(velocity.x))
-	print(int(velocity.y))
+	
 	Body.velocity = velocity
 	Body.move_and_slide()
 
@@ -34,7 +33,7 @@ func vertival_movement(delta: float):
 			velocity.y = -jump
 	else:
 		if sticked_to_wall:
-			if Input.is_action_pressed("jump"):
+			if Input.is_action_just_pressed("jump"):
 				velocity.y = -jump/1.33
 				velocity.x = speed*looking_dir
 				sticked_to_wall = false
