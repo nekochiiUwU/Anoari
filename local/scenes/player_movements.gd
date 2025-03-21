@@ -1,6 +1,7 @@
 extends Node
 
 @onready var Body: CharacterBody2D = get_node("..")
+@onready var PlatformDetectionArea: Area2D = get_node("../Platform Detection Area")
 
 var velocity: Vector2 = Vector2()
 var speed: float = 512
@@ -41,6 +42,8 @@ func vertival_movement(delta: float):
 			velocity.y = min(256, velocity.y)
 		else:
 			velocity.y += gravity * delta
+	Body.set_collision_mask_value(2, velocity.y >= 0 and PlatformDetectionArea.has_overlapping_bodies())
+	print(PlatformDetectionArea.has_overlapping_bodies())
 
 
 func horisontal_movement(delta: float):
