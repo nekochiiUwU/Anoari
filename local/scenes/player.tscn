@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4kaw23noklgd"]
+[gd_scene load_steps=10 format=3 uid="uid://c4kaw23noklgd"]
 
-[ext_resource type="Script" uid="uid://cbv2bf68ctmfa" path="res://local/scenes/player_body.gd" id="1_ggekk"]
-[ext_resource type="Script" uid="uid://dvhx0vg0kds7j" path="res://local/scenes/player_movements.gd" id="2_r5yno"]
-[ext_resource type="Texture2D" uid="uid://b0ghpg5i2tfcp" path="res://assets/visual/sprites/player/tempPlayer.png" id="3_wo1g7"]
-[ext_resource type="Script" uid="uid://c1gj8pe47gy10" path="res://local/scenes/player_camera.gd" id="4_qtfip"]
+[ext_resource type="Script" uid="uid://twu8ae1gkx3m" path="res://local/scenes/player_body.gd" id="1_ggekk"]
+[ext_resource type="Script" uid="uid://dg0cd52hwmt0k" path="res://local/scenes/player_inventory.gd" id="2_8y8ww"]
+[ext_resource type="PackedScene" uid="uid://byv42q0o1y6fw" path="res://local/scenes/weapon.tscn" id="2_ikdmt"]
+[ext_resource type="Script" uid="uid://dvn0xvvw3ch08" path="res://local/scenes/player_movements.gd" id="2_r5yno"]
+[ext_resource type="Script" uid="uid://cqoqc6ox5rs8r" path="res://local/scenes/player_logic.gd" id="3_ikdmt"]
+[ext_resource type="Texture2D" uid="uid://uxokgadmhtbv" path="res://assets/visual/sprites/player/tempPlayer.png" id="3_wo1g7"]
+[ext_resource type="Script" uid="uid://b6tgvrenk28mq" path="res://local/scenes/player_camera.gd" id="4_qtfip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7uw3f"]
 size = Vector2(32, 64)
@@ -14,8 +17,16 @@ size = Vector2(32, 4)
 [node name="1" type="Node"]
 
 [node name="Player Body" type="CharacterBody2D" parent="."]
-collision_layer = 0
+collision_layer = 4
 script = ExtResource("1_ggekk")
+
+[node name="Weapon" parent="Player Body" instance=ExtResource("2_ikdmt")]
+
+[node name="Player Inventory" type="Node" parent="Player Body"]
+script = ExtResource("2_8y8ww")
+
+[node name="Player Logic" type="Node" parent="Player Body"]
+script = ExtResource("3_ikdmt")
 
 [node name="Collision" type="CollisionShape2D" parent="Player Body"]
 shape = SubResource("RectangleShape2D_7uw3f")

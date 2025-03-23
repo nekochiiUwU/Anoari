@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhyo7ymxe3cmf"]
+
+[ext_resource type="Texture2D" uid="uid://4mpb8lwnjhrl" path="res://assets/visual/sprites/flying.png" id="1_sa8r0"]
+[ext_resource type="Script" uid="uid://b3gdt6fa8h24i" path="res://local/scenes/flying_enemy.gd" id="1_xva8b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xva8b"]
+size = Vector2(32, 32)
+
+[node name="Flying Enemy" type="CharacterBody2D"]
+collision_layer = 8
+script = ExtResource("1_xva8b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xva8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_sa8r0")
+hframes = 3

@@ -13,16 +13,22 @@ var air_accel: float = 3 # 167ms
 var looking_dir: int = 1
 var sticked_to_wall: bool = false
 var walk_dir: float = 0
+var dir: Vector2 = Vector2()
 
 
 ## Executed from player_body.gd
 func movement_process(delta: float):
 	velocity = Body.velocity
 	
+	
 	horisontal_movement(delta)
 	vertival_movement(delta)
 	wall_movement()
 	a()
+	
+	var new_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	if new_dir:
+		dir = new_dir
 	
 	Body.velocity = velocity
 	Body.move_and_slide()
@@ -43,7 +49,6 @@ func vertival_movement(delta: float):
 		else:
 			velocity.y += gravity * delta
 	Body.set_collision_mask_value(2, velocity.y >= 0 and PlatformDetectionArea.has_overlapping_bodies())
-	print(PlatformDetectionArea.has_overlapping_bodies())
 
 
 func horisontal_movement(delta: float):
