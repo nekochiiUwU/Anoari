@@ -8,7 +8,9 @@
 
 [node name="Map" parent="." instance=ExtResource("2_adeoo")]
 
-[node name="Player" parent="." instance=ExtResource("1_46xpr")]
-
 [node name="Flying Enemy" parent="." instance=ExtResource("3_ax41m")]
 position = Vector2(120, 24)
+
+[node name="players" type="Node" parent="."]
+
+[node name="Player" parent="players" instance=ExtResource("1_46xpr")]

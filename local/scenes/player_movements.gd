@@ -26,7 +26,7 @@ func movement_process(delta: float):
 	wall_movement()
 	a()
 	
-	var new_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var new_dir = Input.get_vector("left", "right", "up", "down")
 	if new_dir:
 		dir = new_dir
 	
@@ -53,7 +53,7 @@ func vertival_movement(delta: float):
 
 func horisontal_movement(delta: float):
 	var accel = get_accel()
-	walk_dir = Input.get_axis("ui_left", "ui_right")
+	walk_dir = Input.get_axis("left", "right")
 	velocity.x -= velocity.x * delta * accel
 	velocity.x += walk_dir * delta * accel * speed
 

@@ -28,6 +28,9 @@ script = ExtResource("2_8y8ww")
 [node name="Player Logic" type="Node" parent="Player Body"]
 script = ExtResource("3_ikdmt")
 
+[node name="Player Movements" type="Node" parent="Player Body"]
+script = ExtResource("2_r5yno")
+
 [node name="Collision" type="CollisionShape2D" parent="Player Body"]
 shape = SubResource("RectangleShape2D_7uw3f")
 debug_color = Color(0, 1, 1, 0.501961)
@@ -36,9 +39,6 @@ debug_color = Color(0, 1, 1, 0.501961)
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("3_wo1g7")
-
-[node name="Player Movements" type="Node" parent="Player Body"]
-script = ExtResource("2_r5yno")
 
 [node name="Ledge" type="Node2D" parent="Player Body"]
 visible = false
