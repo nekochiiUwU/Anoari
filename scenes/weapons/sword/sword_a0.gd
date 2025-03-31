@@ -13,3 +13,4 @@ func hit() -> void:
 	print(get_overlapping_bodies())
 	for b in get_overlapping_bodies():
 		b.get_hit(12, rota.normalized())
+ 

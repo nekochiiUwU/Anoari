@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c2q87ryrc8x2t"]
 
-[ext_resource type="PackedScene" uid="uid://c4kaw23noklgd" path="res://local/scenes/player.tscn" id="1_46xpr"]
-[ext_resource type="PackedScene" uid="uid://bhxxxbd6dxwua" path="res://local/scenes/map.tscn" id="2_adeoo"]
-[ext_resource type="PackedScene" uid="uid://bhyo7ymxe3cmf" path="res://local/scenes/flying enemy.tscn" id="3_ax41m"]
+[ext_resource type="PackedScene" uid="uid://c4kaw23noklgd" path="res://scenes/player.tscn" id="1_46xpr"]
+[ext_resource type="PackedScene" uid="uid://bhxxxbd6dxwua" path="res://scenes/map.tscn" id="2_adeoo"]
+[ext_resource type="PackedScene" uid="uid://bhyo7ymxe3cmf" path="res://scenes/flying enemy.tscn" id="3_ax41m"]
 
 [node name="Sandbox" type="Node"]
 

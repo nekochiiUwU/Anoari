@@ -5,6 +5,8 @@ extends Node
 
 var velocity: Vector2 = Vector2()
 var speed: float = 512
+var crouch_modifier: float = 0.6
+var is_crouched: bool = false
 var jump: float = 512+128
 var wall_jump: float = (512+128)*1.3
 var gravity: float = 2048
@@ -18,18 +20,19 @@ var dir: Vector2 = Vector2()
 
 ## Executed from player_body.gd
 func movement_process(delta: float):
+	
 	velocity = Body.velocity
-	
-	
-	horisontal_movement(delta)
-	vertival_movement(delta)
+	horizontal_movement(delta)
 	wall_movement()
 	a()
 	
-	var new_dir = Input.get_vector("left", "right", "up", "down")
-	if new_dir:
-		dir = new_dir
-	
+	dir = Body.get_local_mouse_position()
+	if Input.is_action_pressed("down"):
+		is_crouched = true
+		$"../Sprite".texture = load("res://assets/visual/sprites/player/crouched.png")
+	else:
+		is_crouched = false
+		$"../Sprite".texture = load("res://assets/visual/sprites/player/tempPlayer.png")
 	Body.velocity = velocity
 	Body.move_and_slide()
 
@@ -51,12 +54,11 @@ func vertival_movement(delta: float):
 	Body.set_collision_mask_value(2, velocity.y >= 0 and PlatformDetectionArea.has_overlapping_bodies())
 
 
-func horisontal_movement(delta: float):
+func horizontal_movement(delta: float):
 	var accel = get_accel()
 	walk_dir = Input.get_axis("left", "right")
 	velocity.x -= velocity.x * delta * accel
-	velocity.x += walk_dir * delta * accel * speed
-
+	velocity.x += walk_dir * delta * accel * speed * (crouch_modifier if is_crouched else 1.)
 
 func wall_movement():
 	check_stick_to_wall()

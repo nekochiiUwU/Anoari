@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://byv42q0o1y6fw"]
 
-[ext_resource type="Script" uid="uid://by20dte58vxl0" path="res://local/scenes/weapon.gd" id="1_yhc4y"]
+[ext_resource type="Script" uid="uid://by20dte58vxl0" path="res://scenes/weapon.gd" id="1_yhc4y"]
 [ext_resource type="Texture2D" uid="uid://cy4x0trbrgks6" path="res://assets/visual/sprites/attack.png" id="2_8cpjw"]
 
 [sub_resource type="Animation" id="Animation_or7w2"]

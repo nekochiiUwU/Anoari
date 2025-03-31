@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dppf316l21705"]
+[gd_scene load_steps=7 format=3 uid="uid://by0xpisahwf6m"]
 
-[ext_resource type="Script" uid="uid://be1f4ea0mutxv" path="res://local/scenes/sword.gd" id="1_mpolr"]
-[ext_resource type="Texture2D" uid="uid://cy4x0trbrgks6" path="res://assets/visual/sprites/attack.png" id="2_ck8bw"]
+[ext_resource type="Script" uid="uid://bnw3bvn3eq3ft" path="res://scenes/weapons/generic_wand/generic_wand_a0.gd" id="1_le27d"]
+[ext_resource type="Texture2D" uid="uid://brba288hw272y" path="res://assets/visual/sprites/wand_attack.png" id="2_le27d"]
 
 [sub_resource type="Animation" id="Animation_ljct0"]
 length = 0.001
@@ -61,10 +61,10 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gjrq"]
 size = Vector2(72, 56.5)
 
-[node name="Sword Attack 1" type="Area2D"]
+[node name="Generic Wand A0" type="Area2D"]
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("1_mpolr")
+script = ExtResource("1_le27d")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -75,7 +75,7 @@ next/hit = &"RESET"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2, 2)
-texture = ExtResource("2_ck8bw")
+texture = ExtResource("2_le27d")
 hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
