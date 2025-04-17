@@ -23,6 +23,7 @@ func movement_process(delta: float):
 	
 	velocity = Body.velocity
 	horizontal_movement(delta)
+	vertival_movement(delta)
 	wall_movement()
 	a()
 	
