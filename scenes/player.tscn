@@ -17,6 +17,7 @@ size = Vector2(32, 4)
 [node name="1" type="Node"]
 
 [node name="Player Body" type="CharacterBody2D" parent="."]
+position = Vector2(0, -32)
 collision_layer = 4
 script = ExtResource("1_ggekk")
 

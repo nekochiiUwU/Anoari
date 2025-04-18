@@ -5,6 +5,10 @@ var equipped_weapon = 0
 
 func logic_process(delta: float):
 	check_inputs(delta)
+	if Body.position.y >= 7 * 32:
+		Body.position = Vector2(0,-32)
+		$"../../Camera2D".position = Body.position
+		
 
 func check_inputs(delta: float):
 	if Input.is_action_just_pressed("attack"):

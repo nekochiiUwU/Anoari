@@ -47,7 +47,7 @@ func _process(delta: float) -> void:
 		else:
 			var best_dist = 1500 
 			var best_p = null
-			for p in get_node("../players").get_children():
+			for p in get_node("../Players").get_children():
 				if p.get_node("Player Body").global_position.distance_to(global_position) < best_dist:
 					best_dist = p.get_node("Player Body").global_position.distance_to(global_position) 
 					best_p = p.get_node("Player Body")

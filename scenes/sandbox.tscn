@@ -1,16 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2q87ryrc8x2t"]
+[gd_scene load_steps=5 format=3 uid="uid://c2q87ryrc8x2t"]
 
 [ext_resource type="PackedScene" uid="uid://c4kaw23noklgd" path="res://scenes/player.tscn" id="1_46xpr"]
+[ext_resource type="Script" uid="uid://cv86rt3dldar6" path="res://scenes/sandbox.gd" id="1_j6lu3"]
 [ext_resource type="PackedScene" uid="uid://bhxxxbd6dxwua" path="res://scenes/map.tscn" id="2_adeoo"]
 [ext_resource type="PackedScene" uid="uid://bhyo7ymxe3cmf" path="res://scenes/flying enemy.tscn" id="3_ax41m"]
 
 [node name="Sandbox" type="Node"]
+script = ExtResource("1_j6lu3")
 
 [node name="Map" parent="." instance=ExtResource("2_adeoo")]
 
 [node name="Flying Enemy" parent="." instance=ExtResource("3_ax41m")]
 position = Vector2(120, 24)
 
-[node name="players" type="Node" parent="."]
+[node name="Players" type="Node" parent="."]
 
-[node name="Player" parent="players" instance=ExtResource("1_46xpr")]
+[node name="Player" parent="Players" instance=ExtResource("1_46xpr")]
